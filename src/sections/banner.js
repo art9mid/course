@@ -63,10 +63,10 @@ const Banner = () => {
                   <IoIosSearch />
                 </Button>
               </Box>
-              <Box sx={styles.banner.partner}>
-                <span>Sponsored by:</span>
-                <Image src={PartnerImage} alt="banner image" />
-              </Box>
+              {/*<Box sx={styles.banner.partner}>*/}
+              {/*  <span>Sponsored by:</span>*/}
+              {/*  <Image src={PartnerImage} alt="banner image" />*/}
+              {/*</Box>*/}
             </Box>
           </Box>
           <Box sx={styles.banner.col}>
@@ -229,7 +229,7 @@ const styles = {
         content: '""',
         width: '100%',
         height: '100%',
-        border: '2px solid #FFDC6B',
+        border: '2px solid rgba(135,107,253,0.7)',
         borderRadius: '5px',
         top: '30px',
         left: '30px',

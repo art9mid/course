@@ -53,7 +53,8 @@ const styles = {
   headerBtn: {
     fontSize: '16px',
     fontWeight: 700,
-    backgroundColor: '#FCF2E8',
+    color: 'white',
+    backgroundColor: 'rgba(135,107,253,0.7)',
     display: ['none', null, null, null, 'inline-block'],
   },
   header: {
@@ -101,7 +102,7 @@ const styles = {
         mr: '0',
       },
       '&:hover, &.active': {
-        color: 'primary',
+        color: 'muted',
       },
     },
   },

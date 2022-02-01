@@ -9,8 +9,9 @@ export default {
     background: '#FFFFFF', // body background color
     background_secondary: '#F9FBFD', // secondary background color
     border_color: '#E9EDF5', // border color
-    primary: '#EF9E48', // primary button and link color
-    primaryLight: '#FCF2E8',
+    primary: '#fff', // primary button and link color
+    primaryLight: 'rgba(135,107,253,0.7)',
+    primaryLightHover: 'rgba(135,107,253,.9)',
     black: '#0F2137',
     secondary: '#30c', // secondary color - can be used for hover states
     muted: '#7B8188', // muted color
@@ -216,8 +217,7 @@ export default {
       borderRadius: '5px',
       textDecoration: 'none',
       '&:hover': {
-        bg: 'primary',
-        color: '#fff',
+        bg: 'primaryLightHover',
       },
     },
     secondary: {

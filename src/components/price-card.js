@@ -140,7 +140,7 @@ const styles = {
   },
   header: {
     height: 32,
-    backgroundColor: '#EF9E48',
+    backgroundColor: '#876bfd',
     borderRadius: '5px',
     fontWeight: 'bold',
     fontSize: 14,

@@ -209,7 +209,7 @@ const styles = {
       },
     },
     color1: {
-      color: '#EF9E48',
+      color: '#876bfd',
     },
     color2: {
       color: '#FF753A',

@@ -112,7 +112,7 @@ const styles = {
       left: ['0', null, null, '40px'],
       '.videoBtn': {
         backgroundColor: 'rgba(239, 158, 72, .07)',
-        color: '#EF9E48',
+        color: '#876bfd',
         '@media(max-width:710px)': {
           width: '70px',
           height: '70px',
@@ -123,7 +123,7 @@ const styles = {
         },
 
         '&:hover': {
-          backgroundColor: 'rgba(239, 158, 72, 1)',
+          backgroundColor: '#876bfd',
           color: '#fff',
         },
       },
