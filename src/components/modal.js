@@ -10,14 +10,18 @@ function Modal() {
   const handleVideoClose = () => {
     dispatch({ type: 'SET_CLOSE' });
   };
-  return (
-    <ModalVideo
-      channel="youtube"
-      isOpen={isOpen}
-      videoId={url}
-      onClose={handleVideoClose}
-    />
-  );
+
+  if (typeof window !== 'undefined') {
+    return (
+      <ModalVideo
+        channel="youtube"
+        isOpen={isOpen}
+        videoId={url}
+        onClose={handleVideoClose}
+      />
+    );
+  }
+  return <></>;
 }
 
 export default Modal;
