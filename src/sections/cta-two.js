@@ -2,7 +2,6 @@ import { Box, Text, Flex, Image, Container } from 'theme-ui';
 import React from 'react';
 import { Link } from 'components/link';
 import BlockTitle from 'components/block-title';
-import ctaTwoImage from 'assets/free-course.png';
 
 const CtaTwo = () => {
   return (
@@ -11,7 +10,7 @@ const CtaTwo = () => {
         <Flex sx={styles.ctaTwo.row}>
           <Box sx={styles.ctaTwo.col}>
             <Image
-              src={ctaTwoImage}
+              src={'/assets/free-course.png'}
               sx={styles.ctaTwo.img}
               alt="cta two image"
             />

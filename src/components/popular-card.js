@@ -4,7 +4,6 @@ import { jsx, Box, Heading, Text, Button, Image } from 'theme-ui';
 import { Link } from 'components/link';
 import VideoBtn from 'components/video-btn';
 import { FaStar, FaAngleDown, FaAngleUp, FaCheckCircle } from 'react-icons/fa';
-import eyeIcon from 'assets/eye-2.svg';
 
 const PopularCard = (props) => {
   const [status, setStatus] = useState(props.expanded);
@@ -22,22 +21,22 @@ const PopularCard = (props) => {
       <Box sx={styles.popularCard.main}>
         <Box sx={styles.popularCard.top}>
           <Box sx={styles.popularCard.content}>
-            <Box sx={styles.popularCard.meta}>
-              <Box
-                sx={styles.popularCard.stars}
-                className={`starCount-${props.starCount}`}
-              >
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <Text as="span">{props.reviewCount}</Text>
-              </Box>
-              <Box sx={styles.popularCard.watch}>
-                <Image src={eyeIcon} alt="" /> {props.watchCount}
-              </Box>
-            </Box>
+            {/*<Box sx={styles.popularCard.meta}>*/}
+            {/*  <Box*/}
+            {/*    sx={styles.popularCard.stars}*/}
+            {/*    className={`starCount-${props.starCount}`}*/}
+            {/*  >*/}
+            {/*    <FaStar />*/}
+            {/*    <FaStar />*/}
+            {/*    <FaStar />*/}
+            {/*    <FaStar />*/}
+            {/*    <FaStar />*/}
+            {/*    <Text as="span">{props.reviewCount}</Text>*/}
+            {/*  </Box>*/}
+            {/*  <Box sx={styles.popularCard.watch}>*/}
+            {/*    <Image src={eyeIcon} alt="" /> {props.watchCount}*/}
+            {/*  </Box>*/}
+            {/*</Box>*/}
             <Heading as="h3">
               <Link path="/" label={props.title} />
             </Heading>
@@ -111,7 +110,7 @@ const styles = {
       top: ['0', null, null, '40px'],
       left: ['0', null, null, '40px'],
       '.videoBtn': {
-        backgroundColor: 'rgba(239, 158, 72, .07)',
+        backgroundColor: 'rgba(133,133,133,0.07)',
         color: '#876bfd',
         '@media(max-width:710px)': {
           width: '70px',

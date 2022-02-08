@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from 'components/link';
 import VideoBtn from 'components/video-btn';
 import { FaStar } from 'react-icons/fa';
-import eyeIcon from 'assets/eye-2.svg';
 
 const FavoriteCard = (props) => {
   return (
@@ -28,7 +27,7 @@ const FavoriteCard = (props) => {
           <Link path="/" label={props.title} />
         </Heading>
         <Text as="p">
-          <Image src={eyeIcon} alt="" /> {props.watchCount}
+          <Image src={'/assets/eye-2.svg'} alt="" /> {props.watchCount}
         </Text>
       </Box>
     </Box>

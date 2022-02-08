@@ -9,8 +9,29 @@ import Logo from 'components/logo';
 import { DrawerProvider } from 'contexts/drawer/drawer.provider';
 import MobileDrawer from './mobileDrawer';
 import menuItems from './header.data';
+import React from 'react';
+import { useRouter } from 'next/router';
 
 export default function Header({ className }) {
+  const router = useRouter();
+  const langs = [{ value: 'ru', label: 'ru' }, { value: 'en', label: 'en' }, { value: 'ua', label: 'ua' }];
+
+  const handleSelect = (lang) => {
+    router.push(router.asPath, router.asPath, { locale: lang });
+  };
+
+  const renderLanguages = (item, index) => {
+    return (
+      <span
+        style={{ padding: 10, cursor: 'pointer' }}
+        onClick={() => handleSelect(item.value)}
+        key={index}
+      >
+        {item.label}
+      </span>
+    );
+  };
+
   return (
     <DrawerProvider>
       <header sx={styles.header} className={className}>
@@ -23,8 +44,8 @@ export default function Header({ className }) {
                 activeClass="active"
                 sx={styles.nav.navLink}
                 to={path}
-                spy={true}
-                smooth={true}
+                spy
+                smooth
                 offset={-100}
                 duration={500}
                 key={i}
@@ -41,7 +62,7 @@ export default function Header({ className }) {
             sx={styles.headerBtn}
             variant="buttons.primary"
           />
-
+          {langs.map(renderLanguages)}
           <MobileDrawer />
         </Container>
       </header>
@@ -53,8 +74,7 @@ const styles = {
   headerBtn: {
     fontSize: '16px',
     fontWeight: 700,
-    color: 'white',
-    backgroundColor: 'rgba(135,107,253,0.7)',
+    backgroundColor: '#FCF2E8',
     display: ['none', null, null, null, 'inline-block'],
   },
   header: {
@@ -102,7 +122,7 @@ const styles = {
         mr: '0',
       },
       '&:hover, &.active': {
-        color: 'muted',
+        color: 'primary',
       },
     },
   },

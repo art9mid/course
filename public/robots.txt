@@ -1,2 +1,9 @@
+# *
 User-agent: *
-Sitemap: https://example.io/sitemap.xml
+Allow: /
+
+# Host
+Host: https://startup-online-course.vercel.app
+
+# Sitemaps
+Sitemap: https://startup-online-course.vercel.app/sitemap.xml

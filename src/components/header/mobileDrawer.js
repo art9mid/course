@@ -4,10 +4,10 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import Drawer from 'components/drawer';
 import { DrawerContext } from 'contexts/drawer/drawer.context';
 import { IoMdClose, IoMdMenu } from 'react-icons/io';
-import { Link } from 'components/link';
 import menuItems from './header.data';
 import Logo from 'components/logo';
-import LogoDark from 'assets/logo.svg';
+import { Link as ScrollLink } from 'react-scroll';
+import { NavLink } from '../link';
 
 const MobileDrawer = () => {
   const { state, dispatch } = useContext(DrawerContext);
@@ -35,13 +35,24 @@ const MobileDrawer = () => {
     >
       <Scrollbars autoHide>
         <Box sx={styles.content}>
-          <Logo src={LogoDark} />
+          <Logo src={'/assets/logo.svg'} />
           <Box sx={styles.menu}>
             {menuItems.map(({ path, label }, i) => (
-              <Link path={path} key={i} label={label} sx={styles.menu.link} />
+              <ScrollLink
+                onClick={toggleHandler}
+                activeClass="active"
+                sx={styles.menu.link}
+                to={path}
+                spy
+                smooth
+                offset={-100}
+                duration={500}
+                key={i}
+              >
+                {label}
+              </ScrollLink>
             ))}
           </Box>
-
           <Box sx={styles.menuFooter}>
             <Button variant="primary" sx={styles.button}>
               Try for Free

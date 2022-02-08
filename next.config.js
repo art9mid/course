@@ -1,8 +1,13 @@
+const path = require('path');
 const withPlugins = require('next-compose-plugins');
 const optimizedImages = require('next-optimized-images');
+const { i18n } = require('./next-i18next.config');
+//
+// const nextConfiguration = {
+//   target: 'serverless',
+//   i18n,
+// };
 
-const nextConfiguration = {
-  target: 'serverless', //will output independent pages that don't require a monolithic server. It's only compatible with next start or Serverless deployment platforms (like ZEIT Now) — you cannot use the custom server API.
-};
-
-module.exports = withPlugins([optimizedImages], nextConfiguration);
+module.exports = {
+  i18n
+}

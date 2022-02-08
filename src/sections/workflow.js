@@ -2,9 +2,6 @@ import { Heading, Box, Text, Container, Grid } from 'theme-ui';
 import BlockTitle from 'components/block-title';
 import React from 'react';
 
-import ArrowOdd from 'assets/arrow-odd.png';
-import ArrowEven from 'assets/arrow-even.png';
-
 const workflowData = [
   {
     title: 'Set disbursement Instructions',
@@ -113,10 +110,10 @@ const styles = {
         },
       },
       '&:nth-of-type(2n-1)::before': {
-        backgroundImage: `url(${ArrowOdd})`,
+        backgroundImage: `url(/assets/arrow-odd.png)`,
       },
       '&:nth-of-type(2n)::before': {
-        backgroundImage: `url(${ArrowEven})`,
+        backgroundImage: `url(/assets/arrow-even.png)`,
         top: 17,
       },
       '&:last-child::before': {

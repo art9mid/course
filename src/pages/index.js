@@ -1,30 +1,33 @@
 import React from 'react';
 import { ThemeProvider } from 'theme-ui';
-import { StickyProvider } from 'contexts/app/app.provider';
-import { VideoProvider } from 'contexts/video/video.provider';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import theme from 'theme';
+import FAQ from 'sections/faq';
 import SEO from 'components/seo';
-import Layout from 'components/layout';
 import Modal from 'components/modal';
 import Banner from 'sections/banner';
 import CtaOne from 'sections/cta-one';
-import FAQ from 'sections/faq';
 import CtaTwo from 'sections/cta-two';
-import WorkFlow from 'sections/workflow';
+import Layout from 'components/layout';
 import Pricing from 'sections/pricing';
-import PopularCourse from 'sections/popular-course';
+import WorkFlow from 'sections/workflow';
 import CtaThree from 'sections/cta-three';
-import FavoriteCourse from 'sections/favorite-course';
+import PopularCourse from 'sections/popular-course';
+import { StickyProvider } from 'contexts/app/app.provider';
+import { VideoProvider } from 'contexts/video/video.provider';
 
 export default function IndexPage() {
+  const { t } = useTranslation();
+
   return (
     <ThemeProvider theme={theme}>
       <StickyProvider>
         <VideoProvider>
           <Layout>
             <SEO
-              description="Collection of free top of the line startup landing templates built using react/ next js. Free to download, simply edit and deploy! Updated weekly!"
-              title="Startup Online Course Landing"
+              description="description"
+              title={t('title')}
             />
             <Banner />
             {/*<FavoriteCourse />*/}
@@ -41,4 +44,12 @@ export default function IndexPage() {
       </StickyProvider>
     </ThemeProvider>
   );
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common', 'footer'])),
+    },
+  };
 }

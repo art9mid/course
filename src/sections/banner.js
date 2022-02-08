@@ -15,12 +15,6 @@ import VideoBtn from 'components/video-btn';
 import { FaStar } from 'react-icons/fa';
 import { IoIosSearch } from 'react-icons/io';
 
-import BannerBG from 'assets/banner-bg-1-1.png';
-import BannerTextLine from 'assets/banner-text-line.png';
-import BannerPattern from 'assets/banner-pattern.png';
-import BannerImage from 'assets/banner-image-1.png';
-import PartnerImage from 'assets/brands.svg';
-
 const Banner = () => {
   return (
     <Box as="section" id="banner" sx={styles.banner}>
@@ -45,24 +39,24 @@ const Banner = () => {
                 from the victory of the managments that supplies best <br />
                 design system guidelines ever.
               </Text>
-              <Box as="form" sx={styles.banner.form}>
-                <Box as="label" htmlFor="search" variant="styles.srOnly">
-                  Search
-                </Box>
-                <Input
-                  name="search"
-                  id="search"
-                  placeholder="Search Course Name"
-                  sx={styles.banner.form.input}
-                />
-                <Button
-                  type="submit"
-                  aria-label="search btn"
-                  sx={(styles.banner.form.button, { color: '#02073E' })}
-                >
-                  <IoIosSearch />
-                </Button>
-              </Box>
+              {/*<Box as="form" sx={styles.banner.form}>*/}
+              {/*  <Box as="label" htmlFor="search" variant="styles.srOnly">*/}
+              {/*    Search*/}
+              {/*  </Box>*/}
+              {/*  <Input*/}
+              {/*    name="search"*/}
+              {/*    id="search"*/}
+              {/*    placeholder="Search Course Name"*/}
+              {/*    sx={styles.banner.form.input}*/}
+              {/*  />*/}
+              {/*  <Button*/}
+              {/*    type="submit"*/}
+              {/*    aria-label="search btn"*/}
+              {/*    sx={(styles.banner.form.button, { color: '#02073E' })}*/}
+              {/*  >*/}
+              {/*    <IoIosSearch />*/}
+              {/*  </Button>*/}
+              {/*</Box>*/}
               {/*<Box sx={styles.banner.partner}>*/}
               {/*  <span>Sponsored by:</span>*/}
               {/*  <Image src={PartnerImage} alt="banner image" />*/}
@@ -72,8 +66,8 @@ const Banner = () => {
           <Box sx={styles.banner.col}>
             <Box sx={styles.banner.imageBox}>
               <Box sx={styles.banner.imageInner}>
-                <Image src={BannerImage} alt="banner image" />
-                <VideoBtn path="89xtgEk9jTo" />
+                <Image src={'/assets/banner-image-1.png'} alt="banner image" />
+                {/*<VideoBtn path="89xtgEk9jTo" />*/}
               </Box>
             </Box>
           </Box>
@@ -92,7 +86,7 @@ const styles = {
     paddingBottom: ['0px', null, '80px'],
     backgroundImage: [
       'linear-gradient(-180deg, #E0F5FA 0%, #FFFDE6 100%)',
-      `url(${BannerBG})`,
+      `url(/assets/banner-bg-1-1.png)`,
     ],
     backgroundPosition: 'left top',
     backgroundRepeat: 'no-repeat',
@@ -124,7 +118,7 @@ const styles = {
           content: '""',
           width: ['290px', null, null, null, null, '260px', '381px'],
           height: '15px',
-          backgroundImage: `url(${BannerTextLine})`,
+          backgroundImage: `url(/assets/banner-text-line.png)`,
           backgroundPosition: 'center center',
           backgroundSize: '100% 100%',
           backgroundRepeat: 'no-repeat',
@@ -221,7 +215,7 @@ const styles = {
     imageBox: {
       display: 'flex',
       justifyContent: ['flex-start', null, null, 'flex-end'],
-      marginTop: ['60px', null, null, '0'],
+      marginTop: ['30px', null, null, '0'],
     },
     imageInner: {
       position: 'relative',
@@ -229,7 +223,7 @@ const styles = {
         content: '""',
         width: '100%',
         height: '100%',
-        border: '2px solid rgba(135,107,253,0.7)',
+        border: '2px solid #ef9e48',
         borderRadius: '5px',
         top: '30px',
         left: '30px',
@@ -246,7 +240,7 @@ const styles = {
         content: '""',
         width: '302px',
         height: '347px',
-        backgroundImage: `url(${BannerPattern})`,
+        backgroundImage: `url(/assets/banner-pattern.png)`,
         backgroundPosition: 'center',
         top: '-30px',
         right: '-73px',

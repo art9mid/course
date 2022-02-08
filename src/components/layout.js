@@ -34,15 +34,9 @@ export default function Layout({ children }) {
       </Sticky>
       <Waypoint
         onEnter={removeSticky}
-        // onLeave={setSticky}
         onPositionChange={onWaypointPositionChange}
       />
-
-      <main
-        sx={{
-          variant: 'layout.main',
-        }}
-      >
+      <main sx={{ variant: 'layout.main' }}>
         {children}
       </main>
       <Footer />
